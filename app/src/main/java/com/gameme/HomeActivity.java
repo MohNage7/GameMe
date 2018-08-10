@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.gameme.base.OnMainFragmentInteractionListener;
 import com.gameme.login.model.User;
 import com.gameme.posts.addpost.AddPostActivity;
-import com.gameme.posts.displayposts.view.HomeFragmentTest;
+import com.gameme.posts.displayposts.view.HomeFragment;
 import com.gameme.posts.model.Post;
 import com.gameme.profile.ProfileFragment;
 import com.gameme.utils.SharedPreferencesManager;
@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity implements OnMainFragmentInt
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    setCurrentFragment(HomeFragmentTest.newInstance(), getString(R.string.title_home));
+                    setCurrentFragment(HomeFragment.newInstance(), getString(R.string.title_home));
                     return true;
                 case R.id.navigation_new_post:
                     showToolTip(navigation);

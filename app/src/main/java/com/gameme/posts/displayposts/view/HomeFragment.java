@@ -50,7 +50,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class HomeFragmentTest extends BaseFragment implements IVoteFinishListener, ILikeFinishListener.IPostLikeFinishListener {
+public class HomeFragment extends BaseFragment implements IVoteFinishListener, ILikeFinishListener.IPostLikeFinishListener {
 
     public static final String LIST_STATE = "state";
     User currentUser;
@@ -76,11 +76,11 @@ public class HomeFragmentTest extends BaseFragment implements IVoteFinishListene
     private Parcelable mListState;
     private LinearLayoutManager linearLayoutManager;
 
-    public HomeFragmentTest() {
+    public HomeFragment() {
     }
 
-    public static HomeFragmentTest newInstance() {
-        return new HomeFragmentTest();
+    public static HomeFragment newInstance() {
+        return new HomeFragment();
     }
 
     @Override
@@ -130,7 +130,7 @@ public class HomeFragmentTest extends BaseFragment implements IVoteFinishListene
                     viewHolder.mLikeButton.setOnClickListener(new OneShotClickListener() {
                         @Override
                         public void onClicked(View v) {
-                            viewHolder.postLikesListeners(post.getPostId(), HomeFragmentTest.this);
+                            viewHolder.postLikesListeners(post.getPostId(), HomeFragment.this);
                         }
                     });
                 } else {
