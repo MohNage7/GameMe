@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:background="@color/colorAccent"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+
+    <ImageView
+        android:id="@+id/normalPostButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:contentDescription="@string/normal_post_button"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_mode_edit_white_24dp" />
+
+    <ImageView
+        android:id="@+id/questionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:contentDescription="@string/question_post_button"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_help_outline_white_24dp" />
+
+</LinearLayout>

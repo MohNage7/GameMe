@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/answererImg"
+        android:layout_width="@dimen/answer_item_userImage_width"
+        android:layout_height="@dimen/answer_item_userImage_height"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/dp_10"
+        android:src="@drawable/default_profile_picture" />
+
+    <ImageButton
+        android:id="@+id/markImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/answererImg"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/mark_as_answer_button"
+        android:src="@drawable/ic_check_black_36dp"
+        android:tint="@color/icons_gray"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/post_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/answererImg"
+        android:gravity="end"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:maxWidth="@dimen/answer_item_nameTxt_maxWidth"
+            android:padding="2dp"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold"
+            tools:text="Mohamed Nageh" />
+
+
+        <TextView
+            android:id="@+id/answerTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:gravity="end"
+            android:padding="@dimen/dp_5"
+            android:textColor="@color/primary_text"
+            android:textColorLink="@android:color/holo_blue_dark"
+            tools:text="Test is test for testing purposes asd asda sd a asd asd asd asd asd " />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/time_txtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:padding="@dimen/dp_5"
+                android:textColor="@color/secondary_text"
+                android:textSize="12sp"
+                tools:text="2 Hours" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:text="@string/dot"
+                android:textColor="@color/text_color" />
+
+            <TextView
+                android:id="@+id/replayTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:maxLines="1"
+                android:padding="@dimen/dp_5"
+                android:text="@string/replay"
+                android:textColor="@color/secondary_text"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/dp_5"
+                android:text="@string/dot"
+                android:textColor="@color/text_color" />
+
+            <LinearLayout
+                android:id="@+id/like_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:maxLines="1"
+                    android:padding="@dimen/dp_5"
+                    android:text="@string/likes"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/likesCount_txtView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:maxLines="1"
+                    android:padding="@dimen/dp_5"
+                    android:text="0"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/dp_5"
+                    android:text="@string/dot"
+                    android:textColor="@color/text_color" />
+
+                <ImageButton
+                    android:id="@+id/likeAnswerBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/like_button"
+                    android:src="@drawable/ic_thumb_up_white_24dp"
+                    android:tint="@color/icons_gray" />
+            </LinearLayout>
+
+            <include layout="@layout/layout_vote" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_below="@+id/post_layout"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/divider" />
+
+    <ImageButton
+        android:id="@+id/moreOption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/more_options_button"
+        android:src="@drawable/ic_more_vert_white_24dp"
+        android:tint="@color/icons_gray" />
+
+
+</RelativeLayout>
+

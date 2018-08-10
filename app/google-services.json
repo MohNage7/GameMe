@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "910548783558",
+    "firebase_url": "https://gamers-field-4966e.firebaseio.com",
+    "project_id": "gamers-field-4966e",
+    "storage_bucket": "gamers-field-4966e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910548783558:android:b87a17af028a880f",
+        "android_client_info": {
+          "package_name": "com.gameme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910548783558-d1ucnqphc7v9ks5smkpkp8ajmlnla2mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqRoLeX9sfElqrWc5q5McM-9A3TZvXIrw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910548783558:android:14af28c58aeabd89",
+        "android_client_info": {
+          "package_name": "nage7.gamersfield"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910548783558-d1ucnqphc7v9ks5smkpkp8ajmlnla2mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqRoLeX9sfElqrWc5q5McM-9A3TZvXIrw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

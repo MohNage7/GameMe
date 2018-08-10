@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.gameme"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        signingConfigs {
+            release {
+                keyAlias 'gamme'
+                keyPassword '5528460'
+                storeFile file('E:/Work/AndroidStudioProjects/GameMe/gamme.jks')
+                storePassword '5528460'
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:customtabs:27.1.1'
+    implementation 'com.android.support:support-vector-drawable:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.google.firebase:firebase-storage:16.0.1'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
+    implementation 'com.google.firebase:firebase-auth:16.0.2'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.4'
+
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.lyft:scissors:1.1.1'
+    implementation 'com.github.douglasjunior:android-simple-tooltip:0.1.2'
+    implementation 'com.github.thomper:sweet-alert-dialog:v1.4.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.35.0'
+    implementation 'com.scottyab:secure-preferences-lib:0.1.4'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.0.0'
+    implementation 'com.google.android.gms:play-services-auth:15.0.1'
+    implementation 'com.firebaseui:firebase-ui-database:1.0.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // room
+    def room_live_version = "1.1.1"
+    implementation "android.arch.persistence.room:runtime:$room_live_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_live_version"
+    implementation "android.arch.lifecycle:livedata:$room_live_version"
+    annotationProcessor "android.arch.lifecycle:compiler:$room_live_version"
+}
+apply plugin: 'com.google.gms.google-services'

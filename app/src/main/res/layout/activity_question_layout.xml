@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/add_question_appbar"
+        layout="@layout/app_bar_no_title" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="3"
+        app:cardBackgroundColor="@color/white">
+
+
+        <com.lyft.android.scissors.CropView
+            android:id="@+id/post_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            app:cropviewViewportRatio="1" />
+
+
+        <ImageButton
+            android:id="@+id/add_photo_ImgView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/add_new_photo_button"
+            android:src="@drawable/ic_add_a_photo_black_36dp"
+            android:tint="@color/icons_gray" />
+
+    </android.support.v7.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_10">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:contentDescription="@string/icon"
+            android:src="@drawable/ic_question_answer_white_24dp"
+            android:tint="@color/icons_gray" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/post_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/post_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:hint="@string/write_something"
+                android:inputType="textMultiLine"
+                android:textColor="@color/secondary_text"
+                android:textColorHint="@color/primary_text" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/add_post_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorAccent"
+        android:text="@string/submit" />
+</LinearLayout>

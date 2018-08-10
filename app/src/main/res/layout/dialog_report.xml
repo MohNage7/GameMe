@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/why_are_you_reporting_this_user"
+            android:textColor="@color/primary_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+
+        <Button
+            android:id="@+id/fakeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_clickable_item_bg"
+            android:text="@string/this_is_fake_profile"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/annoyingBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_clickable_item_bg"
+            android:text="@string/this_user_annoying_me"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/inappropiateBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_clickable_item_bg"
+            android:text="@string/they_re_sharing_inappropriate_or_offensive_posts"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="colorPrimary">#262626</color>
+    <color name="colorPrimaryDark">#1e1e1e</color>
+    <color name="colorAccent">#e44b3d</color>
+
+    <color name="introBackground">#262626</color>
+    <color name="white">#FFFFFF</color>
+    <color name="primary_light">#FFF9C4</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="icons_white">#FFFFFF</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="colorHighlight">#8686B6</color>
+    <color name="icons_gray">#B6B6B6</color>
+    <color name="up_vote_color">#2196F3</color>
+    <color name="down_vote_color">#e44b3d</color>
+    <color name="dislike_color">#B6B6B6</color>
+    <color name="blue_semi_transparent">#805677fc</color>
+    <color name="global_color_control_highlight">#40000000</color>
+
+</resources>

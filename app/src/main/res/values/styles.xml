@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="backgroundTint">@color/icons_gray</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="EditTextHintStyle" parent="AppTheme">
+        <item name="colorAccent">@android:color/white</item>
+        <item name="android:textColorHint">@color/text_color</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/text_color</item>
+        <item name="colorControlHighlight">@color/text_color</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="HeaderTitleStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+</resources>
