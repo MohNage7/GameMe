@@ -33,7 +33,7 @@ public class JobShedulerUtils {
                 // We are mentioning that the job is periodic.
                 .setRecurring(true)
                 // Run between 30 - 60 seconds from now.
-                .setTrigger(Trigger.executionWindow(5, 10))
+                .setTrigger(Trigger.executionWindow(300, 600))
                 // retry with exponential backoff
                 .setRetryStrategy(RetryStrategy.DEFAULT_LINEAR)
                 //.setRetryStrategy(RetryStrategy.DEFAULT_EXPONENTIAL)
