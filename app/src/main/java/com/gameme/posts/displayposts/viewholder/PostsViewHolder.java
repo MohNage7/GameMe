@@ -45,7 +45,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import static com.gameme.firebase.FirebaseConstants.Childs.LIKES_COUNT;
 import static com.gameme.firebase.FirebaseConstants.Childs.POSTS_LIKES_REF;
 import static com.gameme.posts.displayposts.view.FullScreenImageActivity.FULL_IMAGE;
-import static com.gameme.widget.PostsService.startActionIngredients;
+import static com.gameme.widget.PostsService.startActionPosts;
 
 
 public class PostsViewHolder extends RecyclerView.ViewHolder {
@@ -140,7 +140,7 @@ public class PostsViewHolder extends RecyclerView.ViewHolder {
                 if (dataSnapshot.hasChild(userId)) {
                     HashMap<String, String> yourData = (HashMap<String, String>) dataSnapshot.getValue();
                     String voteType = yourData.get(userId);
-                    if (voteType.equals("up")) {
+                    if (voteType.equals(FirebaseConstants.Childs.UP)) {
                         upVoteButton.setColorFilter(ContextCompat.getColor(mContext, R.color.up_vote_color));
                         downVoteButton.setColorFilter(ContextCompat.getColor(mContext, R.color.icons_gray));
                     } else {
@@ -266,7 +266,7 @@ public class PostsViewHolder extends RecyclerView.ViewHolder {
             public void run() {
                 int isDeleted = appDatabase.getPostsDao().removePost(postId);
                 if (isDeleted == 1)
-                    startActionIngredients(mContext);
+                    startActionPosts(mContext);
             }
         });
 

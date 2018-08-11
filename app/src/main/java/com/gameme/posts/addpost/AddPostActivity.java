@@ -52,7 +52,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-import static com.gameme.widget.PostsService.startActionIngredients;
+import static com.gameme.widget.PostsService.startActionPosts;
 
 public class AddPostActivity extends AppCompatActivity {
 
@@ -142,12 +142,12 @@ public class AddPostActivity extends AppCompatActivity {
     public void addQuestion() {
         if (postType == Post.QUESTION) {
             if (TextUtils.isEmpty(postContentEditText.getText()))
-                postContentEditText.setError("من فضلك ادخل استفسارك");
+                postContentEditText.setError(getString(R.string.error_field_required));
             else
                 uploadPostToServer();
         } else {
             if (TextUtils.isEmpty(postContentEditText.getText()) && imageURI == null)
-                Toast.makeText(this, "يجب كتابة حالتك او رفع صورة علي الاقل!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.must_upload_or_write, Toast.LENGTH_SHORT).show();
             else
                 uploadPostToServer();
         }
@@ -258,7 +258,7 @@ public class AddPostActivity extends AppCompatActivity {
             @Override
             public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) {
                 if (!task.isSuccessful()) {
-                    Toast.makeText(AddPostActivity.this, "Couldn't upload your image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddPostActivity.this, R.string.can_not_upload, Toast.LENGTH_SHORT).show();
                 }
                 return picturePath.getDownloadUrl();
             }
@@ -305,7 +305,7 @@ public class AddPostActivity extends AppCompatActivity {
             }
         });
 
-        startActionIngredients(this);
+        startActionPosts(this);
 
     }
 

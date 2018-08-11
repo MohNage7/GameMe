@@ -26,7 +26,7 @@ public class PostsService extends IntentService {
      *
      * @see IntentService
      */
-    public static void startActionIngredients(Context context) {
+    public static void startActionPosts(Context context) {
         Intent intent = new Intent(context, PostsService.class);
         context.startService(intent);
     }
@@ -37,11 +37,11 @@ public class PostsService extends IntentService {
      */
     @Override
     protected void onHandleIntent(Intent intent) {
-        startActionIngredients();
+        startActionPosts();
     }
 
 
-    private void startActionIngredients() {
+    private void startActionPosts() {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
         // get available widgets ids
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, PostsWidgetProvider.class));

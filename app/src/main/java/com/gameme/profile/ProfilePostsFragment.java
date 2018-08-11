@@ -41,9 +41,9 @@ import butterknife.ButterKnife;
 
 public class ProfilePostsFragment extends BaseFragment {
 
-    private static final String USER_ID = "userId";
+    public static final String USER_ID = "userId";
 
-    DatabaseReference mUsersReference;
+    DatabaseReference mPostsReference;
     String userId;
     @BindView(R.id.no_posts_txtView)
     TextView noPostsTxtView;
@@ -74,8 +74,8 @@ public class ProfilePostsFragment extends BaseFragment {
         if (getArguments() != null) {
             userId = getArguments().getString(USER_ID);
         }
-        mUsersReference = FirebaseUtils.getReference(FirebaseConstants.Childs.POSTS);
-        query = mUsersReference.orderByChild(USER_ID).equalTo(userId);
+        mPostsReference = FirebaseUtils.getReference(FirebaseConstants.Childs.POSTS);
+        query = mPostsReference.orderByChild(USER_ID).equalTo(userId);
     }
 
 

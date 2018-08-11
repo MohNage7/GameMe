@@ -66,6 +66,43 @@ public class Post implements Parcelable {
         postType = in.readInt();
     }
 
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(content);
+        parcel.writeString(postId);
+        parcel.writeString(category);
+        parcel.writeString(image);
+        parcel.writeString(imageName);
+        parcel.writeString(userId);
+        parcel.writeString(username);
+        parcel.writeString(fullName);
+        parcel.writeString(userPicture);
+        parcel.writeLong(time);
+        parcel.writeLong(votesCount);
+        parcel.writeLong(answersCount);
+        parcel.writeLong(likesCount);
+        parcel.writeInt(postType);
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("content", content);
+        result.put("postId", postId);
+        result.put("category", category);
+        result.put("image", image);
+        result.put("imageName", imageName);
+        result.put("userId", userId);
+        result.put("username", username);
+        result.put("fullName", fullName);
+        result.put("userPicture", userPicture);
+        result.put("votesCount", votesCount);
+        result.put("answersCount", answersCount);
+        result.put("likesCount", likesCount);
+        result.put("time", ServerValue.TIMESTAMP);
+        result.put("postType", postType);
+        return result;
+    }
 
     public Post() {
     }
@@ -187,43 +224,6 @@ public class Post implements Parcelable {
         return 0;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(content);
-        parcel.writeString(postId);
-        parcel.writeString(category);
-        parcel.writeString(image);
-        parcel.writeString(imageName);
-        parcel.writeString(userId);
-        parcel.writeString(username);
-        parcel.writeString(fullName);
-        parcel.writeString(userPicture);
-        parcel.writeLong(time);
-        parcel.writeLong(votesCount);
-        parcel.writeLong(answersCount);
-        parcel.writeLong(likesCount);
-        parcel.writeInt(postType);
-    }
-
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("content", content);
-        result.put("postId", postId);
-        result.put("category", category);
-        result.put("image", image);
-        result.put("imageName", imageName);
-        result.put("userId", userId);
-        result.put("username", username);
-        result.put("fullName", fullName);
-        result.put("userPicture", userPicture);
-        result.put("votesCount", votesCount);
-        result.put("answersCount", answersCount);
-        result.put("likesCount", likesCount);
-        result.put("time", ServerValue.TIMESTAMP);
-        result.put("postType", postType);
-        return result;
-    }
 
     @Retention(SOURCE)
     @IntDef({QUESTION, POST})

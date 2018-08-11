@@ -129,8 +129,8 @@ public class UserNameFragment extends BaseFragment {
                 userNameReference.addListenerForSingleValueEvent(usernameValueEventListener);
 
             } else {
-                userNameEdtTxt.setError(" # username can contain  a-z, 0-9, underscore, hyphen\n" +
-                        "# user name Length at least 3 characters and maximum length of 10");
+                userNameEdtTxt.setError(getString(R.string.unsupported_username_hint_1) +
+                        getString(R.string.unsupported_username_hint));
             }
         } else {
             userNameEdtTxt.setError(getString(R.string.error_field_required));

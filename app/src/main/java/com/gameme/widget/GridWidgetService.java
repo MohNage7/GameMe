@@ -17,7 +17,7 @@ import java.util.List;
 public class GridWidgetService extends RemoteViewsService {
     @Override
     public RemoteViewsFactory onGetViewFactory(Intent intent) {
-        return new GridRemoteViewsFactory(this.getApplicationContext(), intent);
+        return new GridRemoteViewsFactory(this.getApplicationContext());
     }
 }
 
@@ -27,7 +27,7 @@ class GridRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private Context mContext;
     private List<Post> postList;
 
-    GridRemoteViewsFactory(Context applicationContext, Intent intent) {
+    GridRemoteViewsFactory(Context applicationContext) {
         mContext = applicationContext;
     }
 
@@ -44,6 +44,7 @@ class GridRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         postList = mDatabase.getPostsDao().getPosts();
     }
 
+
     @Override
     public void onDestroy() {
         postList = null;
@@ -52,7 +53,7 @@ class GridRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     @Override
     public int getCount() {
         if (postList == null) return 0;
-        return 5;
+        return postList.size();
     }
 
     /**

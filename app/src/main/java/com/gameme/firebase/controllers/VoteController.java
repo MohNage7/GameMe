@@ -3,6 +3,7 @@ package com.gameme.firebase.controllers;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.gameme.firebase.FirebaseConstants;
 import com.gameme.login.model.User;
 import com.gameme.utils.SharedPreferencesManager;
 import com.google.firebase.database.DataSnapshot;
@@ -67,8 +68,9 @@ public class VoteController {
 
     private void firstTimeVoting(final DatabaseReference counterDatabaseReference, final DatabaseReference questionVotes, final boolean voteType, final boolean isPost) {
         counterDatabaseReference.runTransaction(new Transaction.Handler() {
+            @NonNull
             @Override
-            public Transaction.Result doTransaction(MutableData currentData) {
+            public Transaction.Result doTransaction(@NonNull MutableData currentData) {
                 if (currentData.getValue() == null) {
                     currentData.setValue(0);
                 } else {
@@ -87,10 +89,10 @@ public class VoteController {
                 if (committed) {
                     questionVotes.removeEventListener(postValueEventListener);
                     if (voteType) {
-                        questionVotes.child(currentUser.getUserId()).setValue("up");
+                        questionVotes.child(currentUser.getUserId()).setValue(FirebaseConstants.Childs.UP);
                         setVoteCount(userId, 1);
                     } else {
-                        questionVotes.child(currentUser.getUserId()).setValue("down");
+                        questionVotes.child(currentUser.getUserId()).setValue(FirebaseConstants.Childs.DOWN);
                         setVoteCount(userId, -1);
                     }
                     mIVoteFinishListener.onVoteFinish(dataSnapshot, voteType, isPost);
@@ -113,7 +115,7 @@ public class VoteController {
      * @param upButton                 true for upButton / false for downDownButton
      */
     private void reVote(DatabaseReference counterDatabaseReference, final DatabaseReference questionVotes, final String oldVoteType, final boolean upButton, final boolean isPost) {
-        if ((oldVoteType.equals("up") && upButton) || (oldVoteType.equals("down") && !upButton)) {
+        if ((oldVoteType.equals(FirebaseConstants.Childs.UP) && upButton) || (oldVoteType.equals(FirebaseConstants.Childs.DOWN) && !upButton)) {
             counterDatabaseReference.runTransaction(new Transaction.Handler() {
                 @NonNull
                 @Override
@@ -168,10 +170,10 @@ public class VoteController {
                     if (committed) {
                         questionVotes.removeEventListener(postValueEventListener);
                         if (upButton) {
-                            questionVotes.child(currentUser.getUserId()).setValue("up");
+                            questionVotes.child(currentUser.getUserId()).setValue(FirebaseConstants.Childs.UP);
                             setVoteCount(userId, 2);
                         } else {
-                            questionVotes.child(currentUser.getUserId()).setValue("down");
+                            questionVotes.child(currentUser.getUserId()).setValue(FirebaseConstants.Childs.DOWN);
                             setVoteCount(userId, -2);
                         }
                         mIVoteFinishListener.onRevoteFinish(dataSnapshot, upButton, false, isPost);

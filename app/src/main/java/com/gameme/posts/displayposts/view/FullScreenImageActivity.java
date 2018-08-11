@@ -151,7 +151,7 @@ public class FullScreenImageActivity extends AppCompatActivity {
             } else {
 
                 ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-                Toast.makeText(FullScreenImageActivity.this, "Permission is needed to download image ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FullScreenImageActivity.this, R.string.permission_needed, Toast.LENGTH_SHORT).show();
                 return false;
             }
         } else { //permission is automatically granted on sdk<23 upon installation

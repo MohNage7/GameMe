@@ -27,6 +27,7 @@ import butterknife.ButterKnife;
 import io.github.douglasjunior.androidSimpleTooltip.SimpleTooltip;
 
 import static com.gameme.posts.addpost.AddPostActivity.POST_TYPE;
+import static com.gameme.widget.JobShedulerUtils.scheduleJob;
 
 public class HomeActivity extends AppCompatActivity implements OnMainFragmentInteractionListener {
     private static final int NEW_POST_RESULT = 1;
@@ -63,6 +64,8 @@ public class HomeActivity extends AppCompatActivity implements OnMainFragmentInt
         if (savedInstanceState == null)
             navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         setSelectedBottomTab(R.id.navigation_home);
+        // schedule job to sync posts in the widget
+        scheduleJob(this);
     }
 
     void showToolTip(View v) {
@@ -148,7 +151,7 @@ public class HomeActivity extends AppCompatActivity implements OnMainFragmentInt
         }
         setSelectedBottomTab(R.id.navigation_home);
         doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Click Back again to exit", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.click_back_again, Toast.LENGTH_LONG).show();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -163,4 +166,6 @@ public class HomeActivity extends AppCompatActivity implements OnMainFragmentInt
         super.onActivityResult(requestCode, resultCode, data);
         setSelectedBottomTab(R.id.navigation_home);
     }
+
+
 }

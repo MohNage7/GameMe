@@ -71,7 +71,7 @@ public class QuestionController {
         questionValueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                final DatabaseReference counterDatabaseReference = singleQuestion.child("votesCount");
+                final DatabaseReference counterDatabaseReference = singleQuestion.child(FirebaseConstants.Childs.VOTES_COUNT);
 
                 if (!dataSnapshot.hasChild(currentUser.getUserId())) {
                     firstTimeVoting(counterDatabaseReference, questionVotes, newVoteType);
@@ -107,8 +107,9 @@ public class QuestionController {
 
     private void firstTimeVoting(final DatabaseReference counterDatabaseReference, final DatabaseReference questionVotes, final boolean voteType) {
         counterDatabaseReference.runTransaction(new Transaction.Handler() {
+            @NonNull
             @Override
-            public Transaction.Result doTransaction(MutableData currentData) {
+            public Transaction.Result doTransaction(@NonNull MutableData currentData) {
                 if (currentData.getValue() == null) {
                     currentData.setValue(0);
                 } else {
@@ -127,10 +128,10 @@ public class QuestionController {
                 if (committed) {
                     questionVotes.removeEventListener(questionValueEventListener);
                     if (voteType) {
-                        questionVotes.child(currentUser.getUserId()).setValue("up");
+                        questionVotes.child(currentUser.getUserId()).setValue(FirebaseConstants.Childs.UP);
                         setVoteCount(userId, 1);
                     } else {
-                        questionVotes.child(currentUser.getUserId()).setValue("down");
+                        questionVotes.child(currentUser.getUserId()).setValue(FirebaseConstants.Childs.DOWN);
                         setVoteCount(userId, -1);
                     }
                     mIVoteFinishListener.onVoteFinish(dataSnapshot, voteType, true);
@@ -190,8 +191,9 @@ public class QuestionController {
 
         } else {
             counterDatabaseReference.runTransaction(new Transaction.Handler() {
+                @NonNull
                 @Override
-                public Transaction.Result doTransaction(MutableData currentData) {
+                public Transaction.Result doTransaction(@NonNull MutableData currentData) {
                     if (currentData.getValue() == null) {
                         currentData.setValue(0);
                     } else {
@@ -208,10 +210,10 @@ public class QuestionController {
                     if (committed) {
                         questionVotes.removeEventListener(questionValueEventListener);
                         if (upButton) {
-                            questionVotes.child(currentUser.getUserId()).setValue("up");
+                            questionVotes.child(currentUser.getUserId()).setValue(FirebaseConstants.Childs.UP);
                             setVoteCount(userId, 2);
                         } else {
-                            questionVotes.child(currentUser.getUserId()).setValue("down");
+                            questionVotes.child(currentUser.getUserId()).setValue(FirebaseConstants.Childs.DOWN);
                             setVoteCount(userId, -2);
                         }
                         mIVoteFinishListener.onRevoteFinish(dataSnapshot, upButton, false, true);

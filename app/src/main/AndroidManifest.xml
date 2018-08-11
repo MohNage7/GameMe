@@ -60,6 +60,7 @@
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <service android:name=".widget.PostsService" />
+        <service android:name=".widget.ScheduledJobService" />
     </application>
 
 </manifest>

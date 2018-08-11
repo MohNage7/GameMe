@@ -10,8 +10,12 @@ import java.util.List;
 
 @Dao
 public interface PostsDao {
-    @Query("SELECT * FROM post ORDER BY postId")
+
+    @Query("SELECT * FROM post ORDER BY postId DESC limit 5")
     List<Post> getPosts();
+
+//    @Query("SELECT * FROM post ORDER BY postId")
+//    List<Post> getPosts();
 
 
     @Insert
@@ -20,4 +24,9 @@ public interface PostsDao {
     @Query("DELETE  FROM post WHERE postId= :id")
     int removePost(String id);
 
+    @Query("DELETE FROM post")
+    void removeAllPosts();
+
+    @Insert
+    void insertAllPosts(Post... posts);
 }

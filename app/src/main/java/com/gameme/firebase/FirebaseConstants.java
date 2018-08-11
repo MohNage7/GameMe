@@ -9,6 +9,7 @@ public interface FirebaseConstants {
         String ANSWER_VOTES = "answerVotes";
         String COMMENTS = "comments";
         String VOTE_COUNT = "voteCount";
+        String VOTES_COUNT = "votesCount";
         String ANSWERS_COUNT = "answersCount";
         String POSTS_COUNT = "postsCount";
         String DISLIKE = "dislike";
@@ -18,6 +19,7 @@ public interface FirebaseConstants {
         String LIKES_COUNT = "likesCount";
         String TIME = "time";
         String UP = "up";
+        String DOWN = "down";
         String IS_ANSWER = "anAnswer";
         String REPORTS = "reports";
         String ANNOYING = "Annoying";

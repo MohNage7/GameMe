@@ -176,13 +176,13 @@ public class SignInFragment extends BaseFragment {
 
             @Override
             public void onCancel() {
-                Toast.makeText(mContext, "Login Canceled", Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, R.string.login_canceled, Toast.LENGTH_LONG).show();
 
             }
 
             @Override
             public void onError(FacebookException error) {
-                Toast.makeText(mContext, "Login Failed", Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, R.string.login_failed, Toast.LENGTH_LONG).show();
 
             }
         });
@@ -261,7 +261,7 @@ public class SignInFragment extends BaseFragment {
 
         } else {
             // Signed out, show unauthenticated UI.
-            Toast.makeText(getActivity(), "Login Failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.login_failed, Toast.LENGTH_SHORT).show();
             hideLoadingDialog();
 
         }
@@ -287,7 +287,7 @@ public class SignInFragment extends BaseFragment {
             @Override
             public void onFailure(@NonNull Exception e) {
                 hideLoadingDialog();
-                Toast.makeText(getActivity(), "Failed to register your account", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.reg_failed, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -353,7 +353,7 @@ public class SignInFragment extends BaseFragment {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 hideLoadingDialog();
-                                Toast.makeText(mContext, "Invalid email/password ,please try again!", Toast.LENGTH_LONG).show();
+                                Toast.makeText(mContext, R.string.invalid_email_password, Toast.LENGTH_LONG).show();
                             }
                         });
                     }

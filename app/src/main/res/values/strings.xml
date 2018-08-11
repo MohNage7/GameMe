@@ -129,6 +129,17 @@
     <string name="question_post_button">question post button</string>
     <string name="logo">logo</string>
     <string name="profile_image">profile image</string>
+    <string name="connection_failed">Connection Failed</string>
+    <string name="login_failed">Login Failed</string>
+    <string name="reg_failed">Failed to register your account</string>
+    <string name="invalid_email_password">Invalid email/password ,please try again!</string>
+    <string name="login_canceled">Login Canceled</string>
+    <string name="unsupported_username_hint"># user name Length at least 3 characters and maximum length of 10</string>
+    <string name="unsupported_username_hint_1"># username can contain  a-z, 0-9, underscore, hyphen</string>
+    <string name="can_not_upload">Couldn\'t upload your image</string>
+    <string name="must_upload_or_write">Write your status or choose an image to continue</string>
+    <string name="permission_needed">Permission is needed to download image</string>
+    <string name="click_back_again">Click Back again to exit</string>
 
 
 </resources>

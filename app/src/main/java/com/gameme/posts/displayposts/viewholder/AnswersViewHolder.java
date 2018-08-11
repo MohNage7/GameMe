@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.gameme.R;
+import com.gameme.firebase.FirebaseConstants;
 import com.gameme.posts.model.Post;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -156,7 +157,7 @@ public class AnswersViewHolder extends RecyclerView.ViewHolder {
                 if (dataSnapshot.hasChild(userId)) {
                     HashMap<String, String> yourData = (HashMap<String, String>) dataSnapshot.getValue();
                     String voteType = yourData.get(userId);
-                    if (voteType.equals("up")) {
+                    if (voteType.equals(FirebaseConstants.Childs.UP)) {
                         upVoteButton.setColorFilter(ContextCompat.getColor(mContext, R.color.up_vote_color));
                         downVoteButton.setColorFilter(ContextCompat.getColor(mContext, R.color.icons_gray));
                     } else {
