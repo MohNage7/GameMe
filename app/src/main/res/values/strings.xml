@@ -140,6 +140,7 @@
     <string name="must_upload_or_write">Write your status or choose an image to continue</string>
     <string name="permission_needed">Permission is needed to download image</string>
     <string name="click_back_again">Click Back again to exit</string>
+    <string name="counter_default_value">0</string>
 
 
 </resources>

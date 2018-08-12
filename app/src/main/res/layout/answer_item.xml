@@ -34,7 +34,7 @@
         android:layout_toStartOf="@id/answererImg"
         android:gravity="end"
         android:orientation="vertical"
-        android:padding="5dp">
+        android:padding="@dimen/dp_5">
 
         <TextView
             android:id="@+id/nameTxt"
@@ -123,7 +123,7 @@
                     android:layout_gravity="end"
                     android:maxLines="1"
                     android:padding="@dimen/dp_5"
-                    android:text="0"
+                    android:text="@string/counter_default_value"
                     android:textColor="@color/secondary_text"
                     android:textSize="12sp" />
 
@@ -157,10 +157,10 @@
         android:layout_width="match_parent"
         android:layout_height=".5dp"
         android:layout_below="@+id/post_layout"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="@dimen/dp_5"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/dp_5"
         android:background="@color/divider" />
 
     <ImageButton

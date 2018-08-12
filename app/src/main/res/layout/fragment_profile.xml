@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/profile_userImage"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/dp_10"
                     android:text="@string/loading" />
 
                 <LinearLayout
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/profile_UserName_txtView"
                     android:layout_centerInParent="true"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/dp_5"
                     android:orientation="horizontal">
 
 
@@ -76,7 +76,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="@dimen/dp_5"
                             android:text="@string/posts" />
 
 
@@ -86,7 +86,7 @@
                     <View
                         android:layout_width=".5dp"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
+                        android:layout_margin="@dimen/dp_5"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -105,7 +105,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="@dimen/dp_5"
                             android:text="@string/answers_count" />
 
 
@@ -115,7 +115,7 @@
                     <View
                         android:layout_width=".5dp"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
+                        android:layout_margin="@dimen/dp_5"
                         android:background="@color/divider" />
 
                     <LinearLayout
@@ -134,7 +134,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="@dimen/dp_5"
                             android:text="@string/votes_count" />
 
                     </LinearLayout>

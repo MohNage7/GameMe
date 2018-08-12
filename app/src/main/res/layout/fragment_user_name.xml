@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:padding="5dp">
+        android:padding="@dimen/dp_5">
 
         <android.support.v7.widget.AppCompatImageView
             android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
         android:id="@+id/continue_Btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/dp_10"
         android:background="@drawable/button_selector"
         android:text="@string/continue_to_home"
         android:textStyle="bold" />

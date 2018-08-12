@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="@dimen/dp_4"
-                    android:text="•"
+                    android:text="@string/dot"
                     android:textColor="@color/text_color" />
 
                 <TextView
@@ -70,7 +70,7 @@
                     android:clickable="false"
                     android:paddingLeft="@dimen/dp_4"
                     android:paddingRight="@dimen/dp_4"
-                    android:text="0"
+                    android:text="@string/counter_default_value"
                     android:textColor="@color/secondary_text" />
 
                 <TextView
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:padding="@dimen/dp_4"
-                    android:text="•"
+                    android:text="@string/dot"
                     android:textColor="@color/text_color" />
 
                 <ImageView
@@ -116,7 +116,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="•"
+                    android:text="@string/dot"
                     android:textColor="@color/text_color" />
 
                 <TextView
@@ -127,7 +127,7 @@
                     android:clickable="false"
                     android:paddingLeft="@dimen/dp_4"
                     android:paddingRight="@dimen/dp_4"
-                    android:text="0"
+                    android:text="@string/counter_default_value"
                     android:textColor="@color/secondary_text" />
 
 

@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="10dp"
+            android:padding="@dimen/dp_10"
             android:text="@string/why_are_you_reporting_this_user"
             android:textColor="@color/primary_text" />
 
