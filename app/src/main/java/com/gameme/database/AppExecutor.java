@@ -12,6 +12,9 @@ public class AppExecutor {
         this.diskIO = diskIO;
     }
 
+    /**
+     * @return Executor instance
+     */
     public static AppExecutor getsInstance() {
         if (sInstance == null) {
             synchronized (LOCK) {

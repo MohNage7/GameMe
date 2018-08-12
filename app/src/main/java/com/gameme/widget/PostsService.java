@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.gameme.R;
 
@@ -28,7 +29,11 @@ public class PostsService extends IntentService {
      */
     public static void startActionPosts(Context context) {
         Intent intent = new Intent(context, PostsService.class);
-        context.startService(intent);
+        try {
+            context.startService(intent);
+        } catch (IllegalStateException e) {
+            Log.e("IllegalStateException", "Not allowed to start service");
+        }
     }
 
 

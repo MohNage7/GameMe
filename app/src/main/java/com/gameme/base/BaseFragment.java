@@ -26,6 +26,11 @@ public class BaseFragment extends Fragment {
         mCurrentUser = SharedPreferencesManager.getLoggedUserObject();
     }
 
+    /**
+     * this method shows loading dialog with specified string
+     *
+     * @param loadingText
+     */
     public void showLoadingDialog(String loadingText) {
         pDialog = new SweetAlertDialog(mContext, SweetAlertDialog.PROGRESS_TYPE);
         pDialog.setCancelable(true);
@@ -34,6 +39,9 @@ public class BaseFragment extends Fragment {
         pDialog.show();
     }
 
+    /**
+     * this method shows no internet connection dialog
+     */
     public void showNoInternetConnection() {
         pDialog = new SweetAlertDialog(mContext, SweetAlertDialog.ERROR_TYPE);
         pDialog.setTitleText(getString(R.string.connection_failed));
@@ -56,6 +64,9 @@ public class BaseFragment extends Fragment {
         }
     }
 
+    /**
+     * this method hides the dialog if it's show
+     */
     public void hideLoadingDialog() {
         if (pDialog != null)
             if (pDialog.isShowing()) {

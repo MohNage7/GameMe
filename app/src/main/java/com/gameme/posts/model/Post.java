@@ -66,6 +66,9 @@ public class Post implements Parcelable {
         postType = in.readInt();
     }
 
+    public Post() {
+    }
+
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(content);
@@ -102,9 +105,6 @@ public class Post implements Parcelable {
         result.put("time", ServerValue.TIMESTAMP);
         result.put("postType", postType);
         return result;
-    }
-
-    public Post() {
     }
 
     public String getFullName() {
